@@ -10,6 +10,7 @@ const nextConfig = {
       'tmssl.akamaized.net',
       'www.xyjybida.co.uk',
       'www.sizoq.org',
+      'scontent.fjsr17-1.fna.fbcdn.net',
     ],
     remotePatterns: [
       {
