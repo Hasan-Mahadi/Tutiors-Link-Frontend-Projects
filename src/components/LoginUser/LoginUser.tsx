@@ -31,7 +31,6 @@ const formSchema = z.object({
 
 export function LoginForm() {
   const router = useRouter();
-
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -46,8 +45,6 @@ export function LoginForm() {
     setIsSubmitting(true);
     console.log('Form submitted with values:', values);
 
-    // API call would go here
-
     const res = await loginUser(values);
     if (res.success) {
       toast.success(res?.message);
@@ -58,6 +55,13 @@ export function LoginForm() {
       setIsSubmitting(false);
     }
   }
+
+  // Function to fill demo credentials
+  const fillDemoCredentials = (email: string, password: string) => {
+    form.setValue('email', email);
+    form.setValue('password', password);
+    toast.info('Demo credentials filled. Click Login to continue.');
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
@@ -178,6 +182,35 @@ export function LoginForm() {
                 )}
               </Button>
 
+              {/* Demo Credentials Section */}
+              <div className="mt-4 space-y-2">
+                <p className="text-xs text-gray-500 text-center">
+                  Try demo accounts:
+                </p>
+                <div className="flex gap-2">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="flex-1 text-xs py-1 h-auto"
+                    onClick={() =>
+                      fillDemoCredentials('teacher1@gmail.com', '12345678')
+                    }
+                  >
+                    Teacher
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="flex-1 text-xs py-1 h-auto"
+                    onClick={() =>
+                      fillDemoCredentials('student1@gmail.com', '12345678')
+                    }
+                  >
+                    Student
+                  </Button>
+                </div>
+              </div>
+
               <div className="text-center text-sm text-gray-600 mt-4">
                 <p>
                   Don't have an account?{' '}
@@ -186,7 +219,7 @@ export function LoginForm() {
                     className="font-medium text-blue-600 hover:text-blue-500"
                   >
                     Create account
-                  </Link>
+                  </Link> or <Link className='text-blue-700 font-semibold' href="/">Home</Link>
                 </p>
               </div>
             </form>
