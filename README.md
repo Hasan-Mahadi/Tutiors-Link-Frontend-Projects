@@ -141,7 +141,7 @@ https://tutor-link-frontend-nine.vercel.app
 ## 📦 Installation (For Developers)
 
 ```bash
-git clone https://github.com/your-username/tutors-connect.git
+git clone [https://github.com/your-username/tutors-connect.git](https://github.com/MohammadTanvir881/TUTOR_LINK_FRONTEND)
 cd tutors-connect
 npm install
 npm run dev
