@@ -114,7 +114,7 @@ export default function BlogPage() {
   return (
     <>
       <Head>
-        <title>Blog & News | TutorConnect</title>
+        <title>Blog & News | TutorConnect-2</title>
         <meta
           name="description"
           content="Educational tips, platform updates, and industry news from TutorConnect."
