@@ -133,7 +133,7 @@ export default function FAQPage() {
   return (
     <>
       <Head>
-        <title>FAQ | TutorConnect</title>
+        <title>FAQ | TutorConnect.</title>
         <meta
           name="description"
           content="Find answers to common questions about our tutoring platform, payments, and account management."
